@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { GeistSans } from 'geist/font'
 import "../styles/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import NavBar from "@/components/navbar"
+import NavBar from "@/components/navbar-shadcn"
 import Footer from "@/components/footer"
 
 const geistSans = GeistSans

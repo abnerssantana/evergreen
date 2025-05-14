@@ -30,7 +30,7 @@ export default function NavBar() {
   }, [scrolled]);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 w-full z-[9999] bg-white/90 backdrop-blur-md transition-all duration-300 ${
       scrolled ? "shadow-md py-2" : "py-4"
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -64,7 +64,7 @@ export default function NavBar() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: '100%' }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 bg-gradient-to-br from-evergreen to-evergreen/90 z-50 flex flex-col justify-center items-center p-6"
+          className="fixed inset-0 bg-gradient-to-br from-evergreen to-fresh-mint z-[9999] flex flex-col justify-center items-center p-6"
         >
           <div className="absolute top-0 left-0 w-full flex justify-between items-center p-6">
             <div className="font-bold text-xl">

@@ -8,10 +8,11 @@ interface ServiceCardProps {
   title: string
   description: string
   imageSrc: string
-  icon: React.ReactNode
+  benefits: string[]
+  icon?: React.ReactNode
 }
 
-export default function ServiceCard({ id, title, description, imageSrc, icon }: ServiceCardProps) {
+export default function ServiceCard({ id, title, description, imageSrc, icon, benefits }: ServiceCardProps) {
   return (
     <div className="bg-white rounded-lg overflow-hidden">
       <div className="relative h-48">

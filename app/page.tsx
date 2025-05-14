@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Award, Heart, Users } from "lucide-react"
 import { motion } from "framer-motion"
+import ImageGallery from "@/components/image-gallery"
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-full md:w-4/5 lg:w-full"
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
                 variants={{
                   initial: { opacity: 0 },
@@ -50,7 +51,7 @@ export default function Home() {
                   className="block font-semibold"
                 >
                   Compassionate Care
-                </motion.span> 
+                </motion.span>
                 <motion.span
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -99,7 +100,7 @@ export default function Home() {
                   href="/services"
                   className="bg-transparent hover:bg-white/20 text-white border border-white font-medium py-3.5 px-8 rounded-lg transition-all flex items-center justify-center shadow-sm"
                 >
-                  Our Services
+                  Learn More About Our Services
                 </Link>
               </motion.div>
             </motion.div>
@@ -304,6 +305,26 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="p-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-8 text-center mb-12">
+          <span className="text-fresh-mint font-medium">PHOTO GALLERY</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-evergreen mt-3 mb-4">See Our Team in Action</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">See our team delivering compassionate care every day.</p>
+        </div>
+        <div className="container mx-auto px-4">
+          <ImageGallery
+            images={[
+              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 1" },
+              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 2" },
+              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 3" },
+              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 4" },
+              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 5" },
+              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 6" },
+            ]}
+          /></div>
       </section>
 
       {/* CTA Section */}
