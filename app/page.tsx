@@ -44,26 +44,29 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-50 mix-blend-difference">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <div className="text-white font-bold text-xl relative z-10">
-            <span className="text-white">EVERGREEN</span>
-            <span className="block text-xs font-light tracking-widest">HOME CARE SOLUTIONS</span>
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="font-bold text-xl relative z-10">
+            <span className="text-evergreen">EVERGREEN</span>
+            <span className="block text-xs font-light tracking-widest text-fresh-mint">HOME CARE SOLUTIONS</span>
           </div>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-1">
             {["home", "about", "services", "contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`text-white uppercase text-sm tracking-wider ${
-                  activeSection === section ? "opacity-100" : "opacity-50"
-                }`}
+                className={`px-4 py-2 rounded-full uppercase text-sm tracking-wider transition-all duration-300 ${activeSection === section 
+                  ? "bg-evergreen text-white font-medium shadow-md" 
+                  : "text-evergreen hover:bg-fresh-mint/20"}`}
               >
                 {section}
               </button>
             ))}
           </div>
-          <button className="md:hidden text-white" onClick={() => setMenuOpen(true)}>
+          <button 
+            className="md:hidden text-evergreen hover:text-fresh-mint transition-colors p-2 rounded-full hover:bg-evergreen/10" 
+            onClick={() => setMenuOpen(true)}
+          >
             <Menu className="h-6 w-6" />
           </button>
         </div>
@@ -71,22 +74,54 @@ export default function Home() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-evergreen z-50 flex flex-col justify-center items-center">
-          <button className="absolute top-6 right-6 text-white" onClick={() => setMenuOpen(false)}>
-            <X className="h-6 w-6" />
-          </button>
-          <div className="flex flex-col space-y-8">
-            {["home", "about", "services", "contact"].map((section) => (
-              <button
+        <motion.div 
+          initial={{ opacity: 0, x: '100%' }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: '100%' }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 bg-gradient-to-br from-evergreen to-evergreen/90 z-50 flex flex-col justify-center items-center p-6"
+        >
+          <div className="absolute top-0 left-0 w-full flex justify-between items-center p-6">
+            <div className="font-bold text-xl">
+              <span className="text-white">EVERGREEN</span>
+              <span className="block text-xs font-light tracking-widest text-fresh-mint">HOME CARE SOLUTIONS</span>
+            </div>
+            <button 
+              className="text-white hover:text-fresh-mint transition-colors p-2 rounded-full hover:bg-white/10" 
+              onClick={() => setMenuOpen(false)}
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="flex flex-col space-y-4 w-full max-w-sm">
+            {["home", "about", "services", "contact"].map((section, index) => (
+              <motion.button
                 key={section}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.3 }}
                 onClick={() => scrollToSection(section)}
-                className="text-white uppercase text-2xl tracking-wider"
+                className={`py-4 px-6 rounded-xl text-left uppercase text-xl tracking-wider transition-all duration-300 ${activeSection === section 
+                  ? "bg-white/10 border-l-4 border-fresh-mint pl-5" 
+                  : "hover:bg-white/5"}`}
               >
-                {section}
-              </button>
+                <span className="text-fresh-mint mr-2 font-light">0{index + 1}.</span>
+                <span className="text-white">{section}</span>
+              </motion.button>
             ))}
           </div>
-        </div>
+          <div className="absolute bottom-10 w-full flex justify-center space-x-6">
+            <a href="tel:+12068805849" className="text-white hover:text-fresh-mint transition-colors">
+              <Phone className="h-6 w-6" />
+            </a>
+            <a href="mailto:danielfrancissiqueira@hotmail.com" className="text-white hover:text-fresh-mint transition-colors">
+              <Mail className="h-6 w-6" />
+            </a>
+            <a href="#" className="text-white hover:text-fresh-mint transition-colors">
+              <MapPin className="h-6 w-6" />
+            </a>
+          </div>
+        </motion.div>
       )}
 
       {/* Hero Section */}
@@ -94,7 +129,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-evergreen/90 to-evergreen/70"></div>
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="/cuidadora.jpg"
             alt="Background"
             fill
             className="object-cover opacity-30"
