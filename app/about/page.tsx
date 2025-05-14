@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-warm-beige py-16 md:py-24">
+      <section className="bg-fresh-mint/20 py-16 md:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold text-evergreen mb-6">About Evergreen Home Care Solutions</h1>

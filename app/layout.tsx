@@ -1,13 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Lato } from "next/font/google"
+import { GeistSans } from 'geist/font'
 import "../styles/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import NavBar from "@/components/navbar"
 import Footer from "@/components/footer"
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' })
-const lato = Lato({ subsets: ["latin"], weight: ["300", "400", "700"], variable: '--font-lato' })
+const geistSans = GeistSans
 
 export const metadata: Metadata = {
   title: "Evergreen Home Care Solutions LLC",
@@ -48,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth light" style={{ colorScheme: "light" }}>
-      <body className={`${inter.variable} ${lato.variable} font-sans`}>
+      <body className={`${geistSans.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="flex flex-col min-h-screen">
             <NavBar />

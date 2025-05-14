@@ -18,6 +18,10 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+      geist: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -26,7 +30,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         evergreen: "#2F5D50",
-        "fresh-mint": "#9ED9CC",
+        "fresh-mint": "#77B254",
         "warm-beige": "#F7F1ED",
         charcoal: "#2E2E2E",
         primary: {

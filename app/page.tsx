@@ -29,24 +29,46 @@ export default function Home() {
 
         {/* Content */}
         <div className="container mx-auto px-4 relative z-20">
-          <div className="max-w-2xl text-white">
+          <div className="w-full text-white">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full md:w-4/5 lg:w-full"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Compassionate Care <br className="hidden md:block" />
-                <span className="text-fresh-mint">You Can Trust</span>
-              </h1>
+              <motion.h1 
+                className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
+                variants={{
+                  initial: { opacity: 0 },
+                  animate: { opacity: 1 }
+                }}
+              >
+                <motion.span
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="block font-semibold"
+                >
+                  Compassionate Care
+                </motion.span> 
+                <motion.span
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="block"
+                >
+                  You Can Trust
+                </motion.span>
+              </motion.h1>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="w-full md:w-3/4 lg:w-2/3"
             >
-              <p className="text-lg text-white/90 mb-8">
+              <p className="text-lg md:text-xl text-white/90 mb-8">
                 Delivering high-quality, patient-centered healthcare across Washington, Oregon, and Florida with empathy and expertise.
               </p>
             </motion.div>
@@ -55,7 +77,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
