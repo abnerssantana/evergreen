@@ -9,143 +9,108 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-fresh-mint/10 to-white relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 z-0 opacity-20">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 25px 25px, rgba(0,0,0,0.05) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(0,0,0,0.05) 2%, transparent 0%)",
-              backgroundSize: "100px 100px",
-            }}
-          ></div>
-        </div>
-
-        {/* Animated background elements - simplified and more subtle */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <motion.div
-            className="absolute -top-20 -left-20 w-96 h-96 bg-fresh-mint/5 rounded-full blur-3xl"
-            animate={{
-              x: [0, 15, 0],
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
+      <section className="relative h-screen flex items-center overflow-hidden">
+        {/* Background Image */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          <div className="absolute inset-0 bg-evergreen/60 z-10" />
+          <Image
+            src="/cuidadora.jpg"
+            alt="Professional caregiver"
+            fill
+            className="object-cover"
+            priority
           />
-          <motion.div
-            className="absolute bottom-0 right-0 w-80 h-80 bg-evergreen/5 rounded-full blur-3xl"
-            animate={{
-              x: [0, -20, 0],
-              y: [0, 15, 0],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
+        </motion.div>
 
-        {/* Content container */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-20">
+          <div className="max-w-2xl text-white">
             <motion.div
-              className="lg:w-1/2 space-y-8"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-evergreen leading-tight tracking-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Compassionate Care <br className="hidden md:block" />
                 <span className="text-fresh-mint">You Can Trust</span>
-              </motion.h1>
-              <motion.p
-                className="text-lg text-gray-600 leading-relaxed max-w-xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                Delivering high-quality, patient-centered healthcare across Washington, Oregon, and Florida with empathy
-                and expertise.
-              </motion.p>
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Link
-                    href="/contact"
-                    className="bg-evergreen hover:bg-evergreen/90 text-white font-medium py-3.5 px-8 rounded-lg transition-all flex items-center justify-center group shadow-sm"
-                  >
-                    Request a Consultation
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Link
-                    href="/services"
-                    className="bg-white hover:bg-gray-50 text-evergreen border border-gray-200 font-medium py-3.5 px-8 rounded-lg transition-all flex items-center justify-center shadow-sm"
-                  >
-                    Our Services
-                  </Link>
-                </motion.div>
-              </motion.div>
+              </h1>
             </motion.div>
+
             <motion.div
-              className="lg:w-1/2"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="relative w-full aspect-square max-w-xl mx-auto lg:mx-0">
-                {/* Card-like frame for the image */}
-                <div className="absolute inset-4 bg-white rounded-2xl shadow-xl z-0"></div>
+              <p className="text-lg text-white/90 mb-8">
+                Delivering high-quality, patient-centered healthcare across Washington, Oregon, and Florida with empathy and expertise.
+              </p>
+            </motion.div>
 
-                {/* Decorative elements */}
-                <div className="absolute -top-3 -left-3 w-24 h-24 bg-fresh-mint/20 rounded-full z-0"></div>
-                <div className="absolute -bottom-3 -right-3 w-32 h-32 bg-evergreen/10 rounded-full z-0"></div>
-
-                {/* Main image with frame */}
-                <div className="relative z-10 rounded-2xl overflow-hidden border-8 border-white shadow-lg">
-                  <Image
-                    src="/cuidadora.jpg"
-                    alt="Professional caregiver with patient"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-
-                {/* Trust badge */}
-                <motion.div
-                  className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg z-20 flex items-center gap-3"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9, duration: 0.6 }}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  href="/contact"
+                  className="bg-white text-evergreen font-medium py-3.5 px-8 rounded-lg transition-all flex items-center justify-center group shadow-md"
                 >
-                  <div className="bg-fresh-mint/20 p-2 rounded-full">
-                    <CheckCircle className="h-6 w-6 text-evergreen" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-evergreen">Trusted Care</p>
-                    <p className="text-sm text-gray-500">20+ Years Experience</p>
-                  </div>
-                </motion.div>
-              </div>
+                  Request a Consultation
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.5 }}
+                  >
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </motion.span>
+                </Link>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  href="/services"
+                  className="bg-transparent hover:bg-white/20 text-white border border-white font-medium py-3.5 px-8 rounded-lg transition-all flex items-center justify-center shadow-sm"
+                >
+                  Our Services
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </div>
+
+        {/* Animated decoration elements */}
+        <motion.div
+          className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-fresh-mint/20 z-10"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.5, 0.7, 0.5]
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+
+        <motion.div
+          className="absolute top-20 left-20 w-24 h-24 rounded-full bg-fresh-mint/10 z-10"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: 1
+          }}
+        />
       </section>
 
       {/* Quick Highlights */}
