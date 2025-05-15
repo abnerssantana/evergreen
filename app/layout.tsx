@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const geistSans = GeistSans
 
 export const metadata: Metadata = {
-  title: "Evergreen Home Care Solutions LLC",
+  title: "Evergreen - Home Care Solutions",
   description: "Compassionate, specialized in-home care services you can trust. Providing personalized caregiving solutions for seniors and individuals with special needs.",
   keywords: "home care, senior care, caregiving, special needs, in-home care, healthcare, Evergreen Care, home healthcare",
   authors: [{ name: "Evergreen Home Care Solutions" }],
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://evergreenhomecare.com",
-    title: "Evergreen Home Care Solutions LLC",
+    title: "Evergreen - Home Care Solutions",
     description: "Compassionate, specialized in-home care services you can trust. Providing personalized caregiving solutions for seniors and individuals with special needs.",
     siteName: "Evergreen Home Care Solutions",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/cuidadora.jpg?height=600&width=800",
         width: 1200,
         height: 630,
         alt: "Evergreen Home Care Solutions"
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evergreen Home Care Solutions LLC",
+    title: "Evergreen - Home Care Solutions",
     description: "Compassionate, specialized in-home care services you can trust.",
-    images: ["/images/twitter-image.jpg"]
+    images: ["/cuidadora.jpg?height=600&width=800"]
   },
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
