@@ -307,26 +307,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="p-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-8 text-center mb-12">
-          <span className="text-fresh-mint font-medium">PHOTO GALLERY</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-evergreen mt-3 mb-4">See Our Team in Action</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">See our team delivering compassionate care every day.</p>
-        </div>
-        <div className="container mx-auto px-4">
-          <ImageGallery
-            images={[
-              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 1" },
-              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 2" },
-              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 3" },
-              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 4" },
-              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 5" },
-              { src: "/placeholder.svg?height=400&width=600", alt: "Team photo 6" },
-            ]}
-          /></div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-evergreen text-white relative overflow-hidden">
         {/* Background pattern */}
