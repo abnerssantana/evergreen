@@ -4,7 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Award, Heart, Users } from "lucide-react"
 import { motion } from "framer-motion"
-import ImageGallery from "@/components/image-gallery"
 
 export default function Home() {
   return (

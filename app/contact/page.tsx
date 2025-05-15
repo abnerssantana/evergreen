@@ -50,7 +50,7 @@ export default function ContactPage() {
       <section className="relative py-20 md:py-28">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-evergreen/90 to-evergreen/70"></div>
-          <Image src="/placeholder.svg?height=600&width=1920" alt="Contact us" fill className="object-cover" priority />
+          <Image src="/care8.jpg?height=600&width=1920" alt="Contact us" fill className="object-cover opacity-30" priority />
         </div>
         <div className="container relative z-10 mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center text-white">
@@ -64,181 +64,39 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-20">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="text-2xl font-bold text-evergreen mb-8">Get in Touch</h2>
-
-              {isSubmitted ? (
-                <div className="bg-green-50 border border-green-100 rounded-2xl p-8 text-center shadow-md">
-                  <div className="mx-auto mb-6 rounded-full bg-green-100 p-3 w-fit">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-green-800 mb-3">Thank You!</h3>
-                  <p className="text-green-700 mb-6">
-                    Your message has been sent successfully. We'll get back to you as soon as possible.
-                  </p>
-                  <Button
-                    onClick={() => setIsSubmitted(false)}
-                    className="bg-gradient-to-r from-evergreen to-fresh-mint hover:shadow-md text-white rounded-full"
-                  >
-                    Send Another Message
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-2xl shadow-md">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-700">
-                      Full Name
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      required
-                      className="rounded-lg border-gray-200 focus:border-evergreen focus:ring-evergreen"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-700">
-                      Email Address
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Your email address"
-                      required
-                      className="rounded-lg border-gray-200 focus:border-evergreen focus:ring-evergreen"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-gray-700">
-                      Phone Number
-                    </Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Your phone number"
-                      required
-                      className="rounded-lg border-gray-200 focus:border-evergreen focus:ring-evergreen"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-gray-700">
-                      Message
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="How can we help you?"
-                      rows={5}
-                      required
-                      className="rounded-lg border-gray-200 focus:border-evergreen focus:ring-evergreen"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-evergreen to-fresh-mint hover:shadow-md text-white rounded-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              )}
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-evergreen mb-8">Contact Information</h2>
-              <div className="space-y-8">
-                <div className="flex items-start">
-                  <div className="rounded-full bg-fresh-mint/20 p-3 mr-4 shrink-0">
-                    <Phone className="h-6 w-6 text-evergreen" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-700">+1 (206) 880-5849</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="rounded-full bg-fresh-mint/20 p-3 mr-4 shrink-0">
-                    <Mail className="h-6 w-6 text-evergreen" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-700 break-all">danielfrancissiqueira@hotmail.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="rounded-full bg-fresh-mint/20 p-3 mr-4 shrink-0">
-                    <MapPin className="h-6 w-6 text-evergreen" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Main Office</h3>
-                    <p className="text-gray-700">Bothell, WA, USA</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="rounded-full bg-fresh-mint/20 p-3 mr-4 shrink-0">
-                    <Clock className="h-6 w-6 text-evergreen" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Hours of Operation</h3>
-                    <p className="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p className="text-gray-700">Saturday: 9:00 AM - 2:00 PM</p>
-                    <p className="text-gray-700">Sunday: Closed</p>
-                    <p className="text-sm text-gray-500 mt-2">24/7 care services available for clients</p>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+            <div className="flex flex-col items-center bg-evergreen-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 text-center h-full">
+              <div className="bg-evergreen-100 p-3 rounded-full mb-4">
+                <Phone className="h-6 w-6 text-evergreen" />
               </div>
-
-              <div className="mt-10 p-8 bg-gradient-to-br from-evergreen to-fresh-mint rounded-2xl shadow-md text-white">
-                <h3 className="font-semibold text-xl mb-4">Request a Consultation</h3>
-                <p className="mb-6 text-white/90">
-                  Prefer to speak with us directly? Schedule a free consultation to discuss your home care needs.
-                </p>
-                <Link href="/contact">
-                  <Button className="bg-white text-evergreen hover:bg-white/90 rounded-full">Schedule a Call</Button>
-                </Link>
-              </div>
+              <h3 className="text-lg font-semibold mb-2 text-evergreen">Phone</h3>
+              <p className="text-gray-700 mb-4">Available from 9 AM to 5 PM</p>
+              <a href="tel:+12065550123" className="text-evergreen hover:underline font-medium">+1 (206) 555-0123</a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-fresh-mint/20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-evergreen mb-4">Our Locations</h2>
-            <p className="max-w-2xl mx-auto text-gray-700">
-              Serving communities across Washington, Oregon, and Florida.
-            </p>
-          </div>
-
-          <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/placeholder.svg?height=800&width=1600"
-              alt="Map of our locations"
-              fill
-              className="object-cover"
-            />
+            <div className="flex flex-col items-center bg-evergreen-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 text-center h-full">
+              <div className="bg-evergreen-100 p-3 rounded-full mb-4">
+                <Mail className="h-6 w-6 text-evergreen" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-evergreen">Email</h3>
+              <p className="text-gray-700 mb-4">We will respond within 24 hours</p>
+              <a href="mailto:contact@evergreen.com" className="text-evergreen hover:underline font-medium">contact@evergreen.com</a>
+            </div>
+            <div className="flex flex-col items-center bg-evergreen-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 text-center h-full">
+              <div className="bg-evergreen-100 p-3 rounded-full mb-4">
+                <MapPin className="h-6 w-6 text-evergreen" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-evergreen">Office</h3>
+              <p className="text-gray-700 mb-4">Visit us by appointment</p>
+              <address className="text-gray-700 not-italic">123 Care Street, Suite 456, Seattle, WA 98101</address>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-evergreen-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-evergreen mb-4">Frequently Asked Questions</h2>
@@ -246,28 +104,28 @@ export default function ContactPage() {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 bg-white">
               <h3 className="text-lg font-semibold mb-3 text-evergreen">What areas do you serve?</h3>
               <p className="text-gray-700">
                 We currently provide services in Washington (Seattle area), Oregon (Portland area), and Florida (Tampa
                 area). Contact us to confirm service availability in your specific location.
               </p>
             </div>
-            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 bg-white">
               <h3 className="text-lg font-semibold mb-3 text-evergreen">How do I get started with your services?</h3>
               <p className="text-gray-700">
                 Simply contact us by phone, email, or through our website to schedule an initial consultation. We'll
                 discuss your needs, answer your questions, and develop a personalized care plan.
               </p>
             </div>
-            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 bg-white">
               <h3 className="text-lg font-semibold mb-3 text-evergreen">Are your caregivers licensed and insured?</h3>
               <p className="text-gray-700">
                 Yes, all our healthcare professionals are fully licensed, insured, and have undergone thorough
                 background checks. We maintain strict standards for our team to ensure the highest quality of care.
               </p>
             </div>
-            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 bg-white">
               <h3 className="text-lg font-semibold mb-3 text-evergreen">Do you accept insurance?</h3>
               <p className="text-gray-700">
                 We work with various insurance providers and can help determine your coverage options. Contact us for a

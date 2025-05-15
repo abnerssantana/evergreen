@@ -1,14 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import ServiceCard from "@/components/service-card"
 
 const services = [
   {
     id: "nursing-rn",
     title: "In-Home Nursing Care (RN)",
     description: "Professional registered nursing care delivered in the comfort of your home.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/care1.jpg?height=400&width=600",
     benefits: [
       "Skilled medical assessment and monitoring",
       "Medication management and administration",
@@ -22,7 +21,7 @@ const services = [
     id: "nursing-lpn",
     title: "In-Home Nursing Care (LPN)",
     description: "Licensed practical nursing support for daily medical needs.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/care2.jpg?height=400&width=600",
     benefits: [
       "Routine health monitoring",
       "Medication administration",
@@ -36,7 +35,7 @@ const services = [
     id: "palliative",
     title: "Palliative Care",
     description: "Specialized care focused on comfort and quality of life for patients with serious illnesses.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/care3.jpg?height=400&width=600",
     benefits: [
       "Pain and symptom management",
       "Emotional and spiritual support",
@@ -50,7 +49,7 @@ const services = [
     id: "health-aide",
     title: "Home Health Aide Support",
     description: "Assistance with daily activities and personal care needs.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/care4.jpg?height=400&width=600",
     benefits: ["Personal hygiene assistance", "Meal preparation", "Light housekeeping", "Medication reminders"],
     fullDescription:
       "Our Home Health Aides provide compassionate assistance with daily activities including personal hygiene, meal preparation, light housekeeping, and medication reminders. They offer reliable support that enhances independence and quality of life at home.",
@@ -59,7 +58,7 @@ const services = [
     id: "recovery",
     title: "Recovery Support Services",
     description: "Specialized care to support recovery after hospitalization or surgery.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/care5.jpg?height=400&width=600",
     benefits: [
       "Post-surgical care",
       "Rehabilitation support",
@@ -73,7 +72,7 @@ const services = [
     id: "personal",
     title: "Personal Care Services",
     description: "Compassionate assistance with personal care and daily living activities.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/care6.jpg?height=400&width=600",
     benefits: ["Bathing and grooming assistance", "Mobility support", "Companionship", "Errands and transportation"],
     fullDescription:
       "Our personal care services offer dignified assistance with bathing, grooming, mobility, and other daily activities. We also provide companionship and help with errands and transportation, supporting independence and enhancing quality of life.",
@@ -91,24 +90,6 @@ export default function ServicesPage() {
             <p className="text-xl text-gray-700">
               Comprehensive, compassionate home care services tailored to meet your unique needs.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                id={service.id}
-                title={service.title}
-                description={service.description}
-                imageSrc={service.imageSrc}
-                benefits={service.benefits}
-              />
-            ))}
           </div>
         </div>
       </section>
@@ -141,7 +122,7 @@ export default function ServicesPage() {
                 </div>
                 <div className={`relative h-64 md:h-80 ${index % 2 === 0 ? "order-2" : "order-2 md:order-1"}`}>
                   <Image
-                    src={service.imageSrc || "/placeholder.svg"}
+                    src={service.imageSrc || "/care6.jpg"}
                     alt={service.title}
                     fill
                     className="rounded-lg object-cover"
@@ -178,7 +159,7 @@ export default function ServicesPage() {
             </div>
             <div className="relative h-80 md:h-96">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/care7.jpg?height=600&width=800"
                 alt="Personalized care planning"
                 fill
                 className="rounded-lg object-cover"
