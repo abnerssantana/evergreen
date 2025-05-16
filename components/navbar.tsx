@@ -40,9 +40,9 @@ export default function NavBar() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="font-bold text-xl relative z-10">
+        <Link href="/" className="font-extrabold text-3xl relative z-10">
           <span className="text-evergreen">EVERGREEN</span>
-          <span className="block text-xs font-light tracking-widest text-fresh-mint">
+          <span className="block text-sm font-light tracking-widest text-fresh-mint">
             HOME CARE SOLUTIONS
           </span>
         </Link>
